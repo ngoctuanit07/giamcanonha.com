@@ -8,6 +8,7 @@
 	use App\Models\CmsNews;
 	use App\Models\CmsNewsDescription;
 	use Mail;
+	use Helper;
 	use View;
 	use Spatie\SchemaOrg\Schema;
 	
