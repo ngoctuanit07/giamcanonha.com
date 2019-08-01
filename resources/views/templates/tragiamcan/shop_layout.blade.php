@@ -64,6 +64,16 @@
     <!--    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Module meta -->
+    <script type="application/ld+json">
+                    {
+                      "@context"        :    "{!! $scheama['@context'] ??'' !!}",
+                      "@type"           : "{!! $scheama['@type'] ??'' !!}",
+                      "name"            : "{!! $scheama['name'] ??'' !!}",
+                      "alternateName"   : "{!! $scheama['contactPoint']['areaServed'] ??'' !!}",
+                      "url":  "{!! $scheama['url'] ??'' !!}",
+
+                    }
+                </script>
 @isset ($layouts['meta'])
     @foreach ( $layouts['meta']  as $layout)
         @if ($layout->page == null ||  $layout->page =='*' || $layout->page =='' || (isset($layout_page) && in_array($layout_page, $layout->page) ) )

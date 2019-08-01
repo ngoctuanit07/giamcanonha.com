@@ -466,11 +466,20 @@ class ShopFront extends GeneralController
     {
         $page = $this->getPage($key);
         if ($page) {
+			$localBusiness = Schema::WebSite()
+				->name($page->title)
+				->email('tangthuyanthuyan@gmail.com')
+				->url(route('pages',['key' => $key]))
+				->telephone('0948068327')
+				->contactPoint(Schema::contactPoint()->areaServed($page->description));
+			//print_r($localBusiness->toArray()); die();
+			$scheama = $localBusiness->toArray();
             return view(SITE_THEME . '.shop_page',
                 array(
                     'title'       => $page->title,
-                    'description' => '',
-                    'keyword'     => '',
+					'scheama' => $scheama,
+                    'description' => $page->description,
+                    'keyword'     => $page->keyword,
                     'page'        => $page,
                 ));
         } else {
