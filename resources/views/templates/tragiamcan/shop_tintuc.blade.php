@@ -35,7 +35,18 @@
                                 <p class="clr"></p>
                             </div>
                         @endforeach
+
                         <div class="clr"></div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 text_align_center">
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <div class="pagination">
+                                {{ $newsTintuc->links() }}
+                            </div>
+                        </div>
+                        <!-- Pagination -->
+
                     </div>
                 </div>
             </div>

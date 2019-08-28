@@ -40,7 +40,7 @@
 		{
 			$query = (new CmsNews)->where('type', "matxi")->where('status', 1)->sort();
 			if (!(int)$limit) {
-				return $query->get();
+				return $query->paginate(8);
 			} else
 				if ($opt == 'paginate') {
 					return $query->paginate((int)$limit);
@@ -54,7 +54,7 @@
 		{
 			$query = (new CmsNews)->where('type', "tintuc")->where('status', 1)->sort();
 			if (!(int)$limit) {
-				return $query->get();
+				return $query->paginate(8);
 			} else
 				if ($opt == 'paginate') {
 					return $query->paginate((int)$limit);
